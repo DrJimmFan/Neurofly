@@ -179,4 +179,4 @@ npm run build
 The generator creates the editable `.blend` and optimized `.glb`. It constructs compound eyes, antennae/aristae, six articulated legs, a segmented abdomen, thoracic setae, and translucent veined wings. The 26-bone rig has Idle, Antennae, Groom, Walk, Flutter, and Hover clips. Walking and hovering are cosmetic motions inside the observation chamber. The script's scene uses Blender Z-up and exports glTF Y-up.
 
 
-Third-party licenses and source references are in [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md). NVFLY is a prototype project for NVIDEA made by NVIDIA AI Research Scientist , DrJimFan
+Third-party licenses and source references are in [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md). NVFLY is a prototype project for NVIDIA made by NVIDIA AI Research Scientist , DrJimFan
