@@ -1,0 +1,40 @@
+{
+  "bytes": 802408,
+  "meshes": 1,
+  "materialPrimitives": 8,
+  "bones": 26,
+  "animations": [
+    {
+      "name": "Idle",
+      "duration": 2.0416667461395264,
+      "tracks": 78
+    },
+    {
+      "name": "Antennae",
+      "duration": 2.0416667461395264,
+      "tracks": 78
+    },
+    {
+      "name": "Groom",
+      "duration": 2.0416667461395264,
+      "tracks": 78
+    },
+    {
+      "name": "Walk",
+      "duration": 2.0416667461395264,
+      "tracks": 78
+    },
+    {
+      "name": "Flutter",
+      "duration": 2.0416667461395264,
+      "tracks": 78
+    },
+    {
+      "name": "Hover",
+      "duration": 2.0416667461395264,
+      "tracks": 78
+    }
+  ],
+  "transparency": "BLEND verified",
+  "playback": "All clips change rig transforms through Three.js AnimationMixer"
+}

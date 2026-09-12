@@ -1,0 +1,1 @@
+{"root":["./src/clock.ts","./src/controller.ts","./src/main.tsx","./src/persistence.ts","./src/renderer.ts","./src/robotics.ts","./src/simulation.test.ts","./src/simulation.ts"],"version":"5.9.2"}
