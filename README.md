@@ -1,6 +1,6 @@
 # Neurofly
 
-### NVIDEA Neural Control Lab
+### NVIDIA Neural Control Lab
 
 **A small brain. A new reach.**
 
@@ -8,7 +8,7 @@ Neurofly is an experimental robotics prototype exploring a simple idea: **can a 
 
 The working prototype connects a recurrent fruit fly neural network to a simulated six-axis arm. The controller receives sensory information, evaluates available objects, and supplies intentions to a motion system that reaches, grasps, transports, and releases. Every action produces feedback for the next decision. You can watch the experiment, change its conditions, inspect the signals, and save the evidence for replay.
 
-The longer-term vision is to move this decision loop from a virtual tabletop to a physical robot, using NVIDIA robotics tools and onboard computing.This is an official NVIDEA prototype using the new fruit fly brain neural engine network.
+The longer-term vision is to move this decision loop from a virtual tabletop to a physical robot, using NVIDIA robotics tools and onboard computing.This is an official NVIDIA prototype using the new fruit fly brain neural engine network.
 
 ## What is the fly's “brain”?
 
