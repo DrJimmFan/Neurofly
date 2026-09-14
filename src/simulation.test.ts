@@ -76,7 +76,7 @@ describe("closed loop physics", () => {
     );
     expect(sim.reason).toContain("inside the tray");
     const recording: Recording = {
-      schema: "nvfly/1",
+      schema: "neurofly/1",
       name: "First flight — seed 42",
       created: "2026-09-12T06:30:00Z",
       model: sim.controller.model,
@@ -86,7 +86,7 @@ describe("closed loop physics", () => {
     };
     fs.mkdirSync("examples", { recursive: true });
     fs.writeFileSync(
-      "examples/pick-and-place.nvfly.json",
+      "examples/pick-and-place.neurofly.json",
       JSON.stringify(recording),
     );
     sim.dispose();
@@ -104,9 +104,9 @@ describe("closed loop physics", () => {
     expect(sim.reason).toContain("inside the tray");
     fs.mkdirSync("examples", { recursive: true });
     fs.writeFileSync(
-      "examples/obstruction.nvfly.json",
+      "examples/obstruction.neurofly.json",
       JSON.stringify({
-        schema: "nvfly/1",
+        schema: "neurofly/1",
         name: "Barrier recovery",
         created: "2026-09-12T06:30:00Z",
         model: sim.controller.model,
@@ -192,7 +192,7 @@ describe("persistence and replay", () => {
     const sim = await new Simulation().init();
     for (let i = 0; i < 20; i++) sim.step();
     const r: Recording = {
-      schema: "nvfly/1",
+      schema: "neurofly/1",
       name: "roundtrip",
       created: new Date().toISOString(),
       model: sim.controller.model,
@@ -201,7 +201,7 @@ describe("persistence and replay", () => {
       frames: sim.frames,
     };
     expect(validate(JSON.parse(JSON.stringify(r)))).toEqual(r);
-    expect(() => validate({ ...r, schema: "nvfly/2" })).toThrow();
+    expect(() => validate({ ...r, schema: "neurofly/2" })).toThrow();
     const invalid = structuredClone(r);
     invalid.frames[0].q[0] = Infinity;
     expect(() => validate(invalid)).toThrow();
@@ -221,7 +221,7 @@ describe("persistence and replay", () => {
     });
     const sim = await new Simulation().init();
     const r: Recording = {
-      schema: "nvfly/1",
+      schema: "neurofly/1",
       name: "stored",
       created: new Date().toISOString(),
       model: sim.controller.model,

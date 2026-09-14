@@ -1,6 +1,6 @@
 # Third-party attribution
 
-NVFLY is an independent project and is not affiliated with or endorsed by any company, research group, or model named in the brief.
+Neurofly is an independent project and is not affiliated with or endorsed by any company, research group, or model named in the brief.
 
 | Component | Role | License / upstream |
 | --- | --- | --- |
@@ -26,4 +26,4 @@ Primary technical references consulted:
 - https://www.rapier.rs/javascript3d/classes/World.html — contact manifolds and world stepping.
 - https://threejs.org/docs/pages/AnimationMixer.html — GLB animation playback and simulation-time control.
 
-Dependency license texts remain in `node_modules` in this local checkout. The lockfile records exact installed versions. No license for public distribution of the original NVFLY source has been selected; this delivery remains on the user's PC.
+Dependency license texts remain in `node_modules` in this local checkout. The lockfile records exact installed versions. No license for public distribution of the original Neurofly source has been selected; this delivery remains on the user's PC.

@@ -1,6 +1,6 @@
 import { PRESETS, type Config, type Frame } from "./simulation";
 export type Recording = {
-  schema: "nvfly/1";
+  schema: "neurofly/1";
   name: string;
   created: string;
   model: string;
@@ -8,11 +8,14 @@ export type Recording = {
   config: Config;
   frames: Frame[];
 };
-const KEY = "nvfly.sessions.v1";
+const KEY = "neurofly.sessions.v1";
 export function validate(data: unknown): Recording {
-  const r = data as Recording;
-  if (!r || r.schema !== "nvfly/1")
-    throw Error("Incompatible recording. Expected NVFLY format nvfly/1.");
+  const incoming = data as Recording | null;
+  const r = incoming && (incoming.schema as string) === "nvfly/1"
+    ? { ...incoming, schema: "neurofly/1" as const }
+    : incoming;
+  if (!r || r.schema !== "neurofly/1")
+    throw Error("Incompatible recording. Expected Neurofly format neurofly/1.");
   if (
     typeof r.name !== "string" ||
     r.name.length > 160 ||
@@ -122,7 +125,7 @@ export function frameIndex(frames: Frame[], time: number) {
 }
 export function load(): Recording[] {
   try {
-    return JSON.parse(localStorage.getItem(KEY) ?? "[]").map(validate);
+    return JSON.parse(localStorage.getItem(KEY) ?? localStorage.getItem("nvfly.sessions.v1") ?? "[]").map(validate);
   } catch {
     return [];
   }
@@ -149,7 +152,7 @@ export function download(r: Recording) {
   );
   const a = document.createElement("a");
   a.href = url;
-  a.download = r.name.replace(/[^\w-]/g, "_") + ".nvfly.json";
+  a.download = r.name.replace(/[^\w-]/g, "_") + ".neurofly.json";
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }

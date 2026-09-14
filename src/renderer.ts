@@ -170,7 +170,7 @@ export class LabRenderer {
     this.targetRing.rotation.x = -Math.PI / 2;
     this.scene.add(this.targetRing);
     new GLTFLoader().load(
-      "/models/nvfly.glb",
+      "/models/neurofly.glb",
       (gltf) => {
         this.fly = gltf.scene;
         this.fly.scale.setScalar(0.4);
@@ -215,7 +215,7 @@ export class LabRenderer {
       },
       undefined,
       () => {
-        this.assetStatus = "Fly asset failed to load. Check /models/nvfly.glb.";
+        this.assetStatus = "Fly asset failed to load. Check /models/neurofly.glb.";
         this.onAsset(this.assetStatus);
       },
     );

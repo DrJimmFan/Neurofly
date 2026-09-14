@@ -19,7 +19,7 @@ facet=material('Eye facet highlight',(.72,.055,.022),.35)
 wingmat=material('Translucent wing membrane',(.66,.79,.75),.22,.28)
 veinmat=material('Fine wing veins',(.23,.3,.22),.7,.65)
 hair=material('Setae',(.11,.065,.025),.8)
-bpy.ops.object.armature_add();rig=bpy.context.object;rig.name='NVFLY_Rig'
+bpy.ops.object.armature_add();rig=bpy.context.object;rig.name='Neurofly_Rig'
 bpy.ops.object.mode_set(mode='EDIT');eb=rig.data.edit_bones;eb.remove(eb[0])
 def bone(name,head,tail,parent=None):
  b=eb.new(name);b.head=head;b.tail=tail
@@ -73,7 +73,7 @@ for i in range(85):
 bpy.ops.object.select_all(action='DESELECT')
 meshes=[o for o in bpy.context.scene.objects if o.type=='MESH']
 for o in meshes:o.select_set(True)
-bpy.context.view_layer.objects.active=meshes[0];bpy.ops.object.join();bpy.context.object.name='NVFLY_Optimized_Skin'
+bpy.context.view_layer.objects.active=meshes[0];bpy.ops.object.join();bpy.context.object.name='Neurofly_Optimized_Skin'
 # Each named NLA strip exports as a browser animation clip.
 bpy.context.view_layer.objects.active=rig;rig.select_set(True)
 for clip in ['Idle','Antennae','Groom','Walk','Flutter','Hover']:
@@ -96,7 +96,7 @@ for clip in ['Idle','Antennae','Groom','Walk','Flutter','Hover']:
 for track in rig.animation_data.nla_tracks:track.mute=True
 for pb in rig.pose.bones:pb.rotation_euler=(0,0,0);pb.location=(0,0,0)
 bpy.context.scene.frame_set(1)
-bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT,'assets','NVFLY.blend'))
+bpy.ops.wm.save_as_mainfile(filepath=os.path.join(ROOT,'assets','Neurofly.blend'))
 for track in rig.animation_data.nla_tracks:track.mute=False
-bpy.ops.export_scene.gltf(filepath=os.path.join(ROOT,'public','models','nvfly.glb'),export_format='GLB',export_animations=True,export_animation_mode='NLA_TRACKS',export_skins=True,export_yup=True,export_apply=False)
-print('NVFLY_ASSET_COMPLETE')
+bpy.ops.export_scene.gltf(filepath=os.path.join(ROOT,'public','models','neurofly.glb'),export_format='GLB',export_animations=True,export_animation_mode='NLA_TRACKS',export_skins=True,export_yup=True,export_apply=False)
+print('Neurofly_ASSET_COMPLETE')

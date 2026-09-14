@@ -68,7 +68,7 @@ function App() {
     [name, setName] = useState("First flight"),
     [replay, setReplay] = useState<Recording | null>(null),
     [onboard, setOnboard] = useState(
-      () => !localStorage.getItem("nvfly.onboard"),
+      () => !(localStorage.getItem("neurofly.onboard") ?? localStorage.getItem("nvfly.onboard")),
     ),
     [clip, setClip] = useState("Idle"),
     [manual, setManual] = useState<V3>([0.7, 0.3, 0]),
@@ -170,7 +170,7 @@ function App() {
   function recording(): Recording {
     const s = sim.current!;
     return {
-      schema: "nvfly/1",
+      schema: "neurofly/1",
       name: name.trim() || "Untitled experiment",
       created: new Date().toISOString(),
       model: s.controller.model,
@@ -243,12 +243,12 @@ function App() {
   return (
     <div className="app">
       <header inert={onboard}>
-        <a className="brand" href="#" aria-label="NVFLY home">
+        <a className="brand" href="#" aria-label="Neurofly home">
           <span className="brandmark">
             <Bug size={24} />
           </span>
           <strong>
-            NVFLY<span>Neural Control Lab</span>
+            Neurofly<span>Neural Control Lab</span>
           </strong>
         </a>
         <nav aria-label="Workspace navigation">
@@ -892,7 +892,7 @@ function App() {
               <>
                 <div className="panel-title">
                   <Info size={17} />
-                  <h2>About NVFLY</h2>
+                  <h2>About Neurofly</h2>
                 </div>
                 <p className="help">
                   An independent, fly-inspired control experiment. This is not a
@@ -931,7 +931,7 @@ function App() {
                   physics is not claimed. The exact Fly/Wirehead repository was
                   not supplied and is not integrated.
                 </p>
-                <a className="text-link" href="/models/nvfly.glb" download>
+                <a className="text-link" href="/models/neurofly.glb" download>
                   Download animated fly GLB <Download size={14} />
                 </a>
               </>
@@ -1111,7 +1111,7 @@ function App() {
         </details>
         <footer>
           <span>
-            <Bug size={14} /> NVFLY <span>Independent by design.</span>
+            <Bug size={14} /> Neurofly <span>Independent by design.</span>
           </span>
           <span>
             {asset} <span>·</span> Structured inputs, transparent decisions.
@@ -1157,7 +1157,7 @@ function App() {
               autoFocus
               className="run"
               onClick={() => {
-                localStorage.setItem("nvfly.onboard", "1");
+                localStorage.setItem("neurofly.onboard", "1");
                 setOnboard(false);
               }}
             >

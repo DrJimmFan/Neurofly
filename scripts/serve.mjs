@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 const root = path.resolve(fileURLToPath(new URL("../dist/", import.meta.url)));
 if (!fs.existsSync(path.join(root, "index.html"))) {
-  console.error("Build NVFLY first with npm run build.");
+  console.error("Build Neurofly first with npm run build.");
   process.exit(1);
 }
 const mime = {
@@ -43,12 +43,12 @@ const server = http.createServer((req, res) => {
   }
 });
 server.listen(4173, "127.0.0.1", () =>
-  console.log("NVFLY is ready: http://127.0.0.1:4173/"),
+  console.log("Neurofly is ready: http://127.0.0.1:4173/"),
 );
 server.on("error", (error) => {
   console.error(
     error.code === "EADDRINUSE"
-      ? "Port 4173 is already in use. NVFLY may already be running at http://127.0.0.1:4173/."
+      ? "Port 4173 is already in use. Neurofly may already be running at http://127.0.0.1:4173/."
       : error.message,
   );
   process.exitCode = 1;

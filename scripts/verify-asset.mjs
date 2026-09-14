@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { AnimationMixer } from "three";
 const bytes = fs.readFileSync(
-  new URL("../public/models/nvfly.glb", import.meta.url),
+  new URL("../public/models/neurofly.glb", import.meta.url),
 );
 const json = JSON.parse(
   bytes.subarray(20, 20 + bytes.readUInt32LE(12)).toString(),
