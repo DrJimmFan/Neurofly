@@ -1,10 +1,10 @@
-# NVFLY
+# Neurofly
 
 ### NVIDEA Neural Control Lab
 
 **A small brain. A new reach.**
 
-NVFLY is an experimental robotics prototype exploring a simple idea: **can a compact, fly-inspired neural controller make useful decisions for a robotic arm?**
+Neurofly is an experimental robotics prototype exploring a simple idea: **can a compact, fly-inspired neural controller make useful decisions for a robotic arm?**
 
 The working prototype connects a recurrent fruit fly neural network to a simulated six-axis arm. The controller receives sensory information, evaluates available objects, and supplies intentions to a motion system that reaches, grasps, transports, and releases. Every action produces feedback for the next decision. You can watch the experiment, change its conditions, inspect the signals, and save the evidence for replay.
 
@@ -12,7 +12,7 @@ The longer-term vision is to move this decision loop from a virtual tabletop to 
 
 ## What is the fly's “brain”?
 
-In NVFLY, “brain” is shorthand for the **FLY neural engine: a small, custom, fly-inspired software controller**. It is a living fly's brain, a reconstructed biological connectome.
+In Neurofly, “brain” is shorthand for the **FLY neural engine: a small, custom, fly-inspired software controller**. It is a living fly's brain, a reconstructed biological connectome.
 
 The engine has eight recurrent units per object. Each unit combines current sensory input with retained activity from the previous update. That internal state gives the controller a short-term memory: its response depends on both what it receives now and its recent activity.
 
@@ -89,7 +89,7 @@ That transfer requires engineering and validation beyond the browser demo:
 
 A future NVIDIA-based implementation could use three distinct parts of the robotics stack:
 
-| Possible component | Proposed role in NVFLY | Current status |
+| Possible component | Proposed role in Neurofly | Current status |
 | --- | --- | --- |
 | NVIDIA Isaac Sim | Build and test a model of the selected physical robot and its sensor environment | Not integrated |
 | NVIDIA Isaac ROS | Support a future ROS 2 perception and robotics integration | Not integrated |
@@ -122,7 +122,7 @@ Known approximations include kinematic arm servos, discrete collision guards, a 
 
 ## Open on this PC
 
-Double-click **Start-NVFLY.cmd**, then open **http://127.0.0.1:4173/**. Keep the launcher running while using the app. The built application is already in `dist/`, so Node.js is the only requirement for this route. If the port is already occupied by NVFLY, open the existing URL.
+Double-click **Start-Neurofly.cmd**, then open **http://127.0.0.1:4173/**. Keep the launcher running while using the app. The built application is already in `dist/`, so Node.js is the only requirement for this route. If the port is already occupied by Neurofly, open the existing URL.
 
 1. Enter the lab and click **Run experiment**.
 2. Watch the gripper make contact, carry the object, and release it in the tray.
@@ -159,10 +159,10 @@ The lockfile pins the dependency graph. npm 11 may print an install-script appro
 | `src/renderer.ts` | Three.js workspace, hierarchical arm, GLB rig/animation, schematic head overlay |
 | `src/persistence.ts` | Validated recording format, browser storage, export and recorded-state playback |
 | `src/main.tsx`, `src/style.css` | Responsive, keyboard-operable product interface |
-| `assets/NVFLY.blend` | Editable Blender model and animation rig |
-| `public/models/nvfly.glb` | Optimized skinned fly with six clips |
+| `assets/Neurofly.blend` | Editable Blender model and animation rig |
+| `public/models/Neurofly.glb` | Optimized skinned fly with six clips |
 | `scripts/create_fly.py` | Reproducible Blender asset generation |
-| `examples/*.nvfly.json` | Real recordings generated from the physics simulation |
+| `examples/*.Neurofly.json` | Real recordings generated from the physics simulation |
 | `docs/ARCHITECTURE.md` | Controller equations, mechanics, safety, assumptions and limitations |
 | `docs/VALIDATION.md` | Validation evidence and known limitations |
 
@@ -179,4 +179,4 @@ npm run build
 The generator creates the editable `.blend` and optimized `.glb`. It constructs compound eyes, antennae/aristae, six articulated legs, a segmented abdomen, thoracic setae, and translucent veined wings. The 26-bone rig has Idle, Antennae, Groom, Walk, Flutter, and Hover clips. Walking and hovering are cosmetic motions inside the observation chamber. The script's scene uses Blender Z-up and exports glTF Y-up.
 
 
-Third-party licenses and source references are in [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md). NVFLY is a prototype project for NVIDIA made by NVIDIA AI Research Scientist , DrJimFan
+Third-party licenses and source references are in [docs/ATTRIBUTION.md](docs/ATTRIBUTION.md). Neurofly is a prototype project for NVIDIA made by NVIDIA AI Research Scientist , DrJimFan
